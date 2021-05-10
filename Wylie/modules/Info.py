@@ -48,7 +48,8 @@ async def _t(event):
  user_id = user.id
  chat_id = event.chat_id
  msg_id = event.id
- text = "**[Chat ID]**(http://t.me/{event.chat.username}): `{chat_id}`"
+ text = f"**[Chat ID]**(http://t.me/{event.chat.username}): `{chat_id}`"
+ text += f"**[Message ID]**(http://t.me/c/{str(event.chat_id.replace("-100", ""))}/{event.id}): `{event.id}`"
  if event.reply_to_msg_id:
    print(5)
  await event.edit(text)
