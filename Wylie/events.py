@@ -1,5 +1,5 @@
 from Wylie import tbot, ubot, OWNER_ID
-import os, glob, re, time, logging
+import os, glob, re, time, logging, sys
 from pathlib import Path
 from telethon import events
 
