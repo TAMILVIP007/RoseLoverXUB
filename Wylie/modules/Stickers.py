@@ -181,7 +181,7 @@ async def hehe(event):
                 await conv.get_response()
                 await conv.send_message("/done")
                 await conv.get_response()
-                await ubot..send_read_acknowledge(conv.chat_id)
+                await ubot.send_read_acknowledge(conv.chat_id)
         else:
             await xx.edit("`Brewing a new Pack...`")
             async with ubot.conversation("Stickers") as conv:
