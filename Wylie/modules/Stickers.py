@@ -1,6 +1,6 @@
 from Wylie import ubot
 from Wylie.events import Wbot
-import os, io, re , random
+import os, io, re, random
 import urllib.request
 from os import remove
 from telethon.tl.types import (
