@@ -1,6 +1,7 @@
 from Wylie import ubot
 from Wylie.events import Wbot
 from . import get_user
+from telethon.tl.functions.users import GetFullUserRequest
 
 @Wbot(pattern="^/info ?(.*)")
 async def new(event):
@@ -16,15 +17,21 @@ async def new(event):
  first_name = user.first_name
  last_name = user.last_name
  username = user.username
- text = "<b><mark>User Information:</mark></b>\n\n"
- text += f"<b>ID:</b> <code>{user_id}</code>\n"
+ text = "╒═══「<b>User info</b>:\n"
  if first_name:
    text += f"<b>First Name:</b> {first_name}\n"
  if last_name:
    text += f"<b>Last Name:</b> {last_name}\n"
+ ups = None
  if username:
    text += f"<b>Username:</b> @{username}\n"
+   ups = await event.client(GetFullUserRequest(user.username))
+ text += f"<b>ID:</b> <code>{user_id}</code>\n"
  text += f'<b>User link:</b> <a href="tg://user?id={user_id}">{first_name}</a>'
+ if ups:
+  text += f"\n\n<b>Bio:</b> <code>{ups.about}</code>"
+  text += f"\n\n<Gbanned: No</b>"
+  text += f"\n\n╘══「 <b>Groups count:</b> {ups.common_chats_count} 」"
  await event.edit(text, parse_mode='html')
 
 
