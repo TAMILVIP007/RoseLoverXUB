@@ -19,8 +19,7 @@ def Wbot(**args):
                 return
         ubot.add_event_handler(wrapper, events.NewMessage(**args))
         return wrapper
-
-    return decorator   
+   return decorator   
   
   
   def load_module(shortname):
