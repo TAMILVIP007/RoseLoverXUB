@@ -1,5 +1,5 @@
-from Wylie.events import Cbot
+from Wylie.events import Wbot
 
-@Cbot(pattern="^/ping")
+@Wbot(pattern="^/ping")
 async def _(event):
   await event.edit("Pong.")
