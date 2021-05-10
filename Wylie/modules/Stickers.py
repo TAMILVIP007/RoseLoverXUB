@@ -32,6 +32,7 @@ KANGING_STR = (
 
 @Wbot(pattern="^/kang ?(.*)")
 async def hehe(event):
+ try:
     xx = await event.edit("`Processing...`")
     username = "RoseLoverX"
     message = await event.get_reply_message()
@@ -235,3 +236,5 @@ async def hehe(event):
             os.remove(photo)
         except BaseException:
             pass
+ except Exception as k:
+   await event.reply(str(k))
