@@ -1,0 +1,82 @@
+{
+      "name": "Wylie",
+      "description": "A Telethon based Telegram Userbot.",
+      "logo": "https://telegra.ph/file/e1e8299d68ada01e98c5a.jpg",
+      "keywords": [
+         "Telethon",
+         "Telegram",
+         "User",
+         "Bot",
+         "Wylie"
+      ],   
+   "repository": "https://github.com/Amarnathcjd/RoseLoverXUB",
+   "addons": [
+      {
+         "options": {
+            "version": "12"
+         },
+         "plan": "heroku-postgresql"
+      }
+   ],
+   "buildpacks": [
+    {
+      "url": "heroku/python"
+    }     
+  ],      
+   "env": {
+      "TOKEN": {
+         "description": "Your bot token. Get one from @BotFather duh",
+         "required": true,
+         "value": ""
+      },
+      "API_KEY": {
+         "description": "Get API_KEY from my.telegram.org, used for telethon based modules.",
+         "required": true,
+         "value": ""
+      },
+      "API_HASH": {
+         "description": "Get API_HASH from my.telegram.org, used for telethon based modules.",
+         "required": true,
+         "value": ""
+      },
+      "OWNER_ID": {
+         "description": "Your user ID as an integer.",
+         "required": true,
+         "value": ""
+      },
+      "STRING_SESSION": {
+         "description": "Telegram String Session",
+         "required": true,
+         "value": ""
+      },
+      "MONGO_DB_URI": {
+         "description": "MongoDB Url get from mongodb",
+         "required": false,
+         "value": ""
+      },      
+      "DEV_USERS": {
+         "description": "Ids of dev users seperated by space",
+         "required": false,
+         "value": ""
+      },
+      "SUDO_USERS": {
+         "description": "Ids of sudo users seperated by space",
+         "required": false,
+         "value": ""
+      },
+      "UPSTREAM_REPO_URL": {
+         "description": "Required for Update module",
+         "required": true,
+         "value": "https://github.com/Amarnathcjd/RoseLoverXUB"
+      }
+   },
+   "keywords": [
+      "telegram",
+      "Telethon",
+      "group",
+      "manager",
+      "Wylie"
+   ],
+   "name": "Wylie",
+   "repository": "https://github.com/Amarnathcjd/RoseLoverXUB"
+}
