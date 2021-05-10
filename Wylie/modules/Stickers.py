@@ -28,7 +28,7 @@ EMOJI_PATTERN = re.compile(
 @Wbot(pattern="^/kang ?(.*)")
 async def hehe(event):
     xx = await event.edit("`Processing...`")
-    user.username = "RoseLoverX"
+    username = "RoseLoverX"
     message = await args.get_reply_message()
     photo = None
     emojibypass = False
@@ -88,7 +88,7 @@ async def hehe(event):
                 emoji = splat[1]
 
         packname = f"Wy_{user.id}_{pack}"
-        packnick = f"@{user.username}'s Pack {pack}"
+        packnick = f"@{username}'s Pack {pack}"
         cmd = "/newpack"
         file = io.BytesIO()
 
@@ -119,7 +119,7 @@ async def hehe(event):
                 while "120" in x.text:
                     pack += 1
                     packname = f"ult_{user.id}_{pack}"
-                    packnick = f"@{user.username}'s Pack {pack}"
+                    packnick = f"@{username}'s Pack {pack}"
                     await xx.edit(
                         "`Switching to Pack "
                         + str(pack)
