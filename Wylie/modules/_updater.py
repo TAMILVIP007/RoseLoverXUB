@@ -105,7 +105,7 @@ async def _(ups):
             )
             remove("output.txt")
         else:
-            await lol.edit(changelog_str + "\n\n" + "**do** `/update now` **to update**")
+            await lol.edit(changelog_str + "\n" + "**do** `/update now` **to update**")
 
         return
 
