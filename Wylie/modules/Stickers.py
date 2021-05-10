@@ -29,7 +29,7 @@ EMOJI_PATTERN = re.compile(
 async def hehe(event):
     xx = await event.edit("`Processing...`")
     username = "RoseLoverX"
-    message = await args.get_reply_message()
+    message = await event.get_reply_message()
     photo = None
     emojibypass = False
     is_anim = False
@@ -74,7 +74,7 @@ async def hehe(event):
         return
 
     if photo:
-        splat = args.text.split()
+        splat = event.text.split()
         if not emojibypass:
             emoji = "🔰"
         pack = 1
