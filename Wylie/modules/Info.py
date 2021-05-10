@@ -68,7 +68,6 @@ async def _t(event):
   elif msg.media:
     type = "Media"
   if msg.media:
-    type = "Media"
     file_id = msg.file.id
     text += f"\n\n**Media Type:** `{type}`\n"
     text += f"**File ID:** `{file_id}`"
