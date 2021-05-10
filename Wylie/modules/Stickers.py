@@ -25,8 +25,14 @@ EMOJI_PATTERN = re.compile(
     "]+",
 )
 
+KANGING_STR = (
+ "Wow that sticker looks nice.",
+ "Roses are red, violents are blue kanging that sticker so my oacc looks cool",
+)
+
 @Wbot(pattern="^/kang ?(.*)")
 async def hehe(event):
+ try:
     xx = await event.edit("`Processing...`")
     username = "RoseLoverX"
     message = await event.get_reply_message()
