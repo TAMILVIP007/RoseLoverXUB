@@ -1,6 +1,5 @@
 from Wylie.events import Wbot
-import time
-from datetime import datetime
+import time, datetime
 from . import get_readable_time
 
 @Wbot(pattern="^/ping")
