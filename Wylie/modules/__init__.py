@@ -33,7 +33,7 @@ async def get_user(event):
     args = event.pattern_match.group(1).split(" ", 1)
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
-        user_obj = await tbot.get_entity(previous_message.sender_id)
+        user_obj = await ubot.get_entity(previous_message.sender_id)
         extra = event.pattern_match.group(1)
     elif args:
         extra = None
