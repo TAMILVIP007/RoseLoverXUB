@@ -30,7 +30,7 @@ async def new(event):
  text += f'<b>User link:</b> <a href="tg://user?id={user_id}">{first_name}</a>'
  if ups:
   text += f"\n\n<b>Bio:</b> <code>{ups.about}</code>"
-  text += f"\n\n<Gbanned: No</b>"
+  text += f"\n\n<b>Gbanned: No</b>"
   text += f"\n\n╘══「 <b>Groups count:</b> {ups.common_chats_count} 」"
  await event.edit(text, parse_mode='html')
 
