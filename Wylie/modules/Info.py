@@ -35,3 +35,19 @@ async def new(event):
  await event.edit(text, parse_mode='html')
 
 
+@Wbot(pattern="^/id ?(.*)")
+async def _t(event):
+ if not event.reply_to_msg_id and not event.pattern_match.group(1):
+   user = await ubot.get_entity(event.sender_id)
+ else:
+  try:
+   user, extra = await get_user(event)
+  except TypeError as e:
+   print(e)
+   pass
+ user_id = user.id
+ chat_id = event.chat_id
+ msg_id = event.id
+ text = "**[Chat ID]**(http://t.me/{event.chat.username}): `{chat_id}`"
+ if event.reply_to_msg_id:
+   print(5)
