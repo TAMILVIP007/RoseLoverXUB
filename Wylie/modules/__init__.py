@@ -42,12 +42,12 @@ async def get_user(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.reply("I don't know who you're talking about, you're going to need to specify a user...!")
+            await event.edit("I don't know who you're talking about, you're going to need to specify a user...!")
             return
         try:
-            user_obj = await tbot.get_entity(user)
+            user_obj = await ubot.get_entity(user)
         except (TypeError, ValueError) as err:
-            await event.reply(str(err))
+            await event.edit(str(err))
             return
 
     return user_obj, extra
