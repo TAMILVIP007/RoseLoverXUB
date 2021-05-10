@@ -9,7 +9,8 @@ async def new(event):
  else:
   try:
    user, extra = await get_user(event)
-  except TypeError:
+  except TypeError as e:
+   print(e)
    pass
  user_id = user.id
  first_name = user.first_name
