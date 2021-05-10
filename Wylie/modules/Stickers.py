@@ -32,7 +32,6 @@ KANGING_STR = (
 
 @Wbot(pattern="^/kang ?(.*)")
 async def hehe(event):
- try:
     xx = await event.edit("`Processing...`")
     username = "RoseLoverX"
     message = await event.get_reply_message()
