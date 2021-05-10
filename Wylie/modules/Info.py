@@ -69,7 +69,7 @@ async def _t(event):
     type = "Media"
   if msg.media:
     type = "Media"
-    file_id = event.file.id
+    file_id = msg.file.id
     text += f"\n\n**Media Type:** `{type}`\n"
     text += f"**File ID:** `{file_id}`"
  await event.edit(text)
