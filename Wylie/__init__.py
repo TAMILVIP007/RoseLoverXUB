@@ -14,7 +14,7 @@ StartTime = datetime.now()
 STRING_SESSION = os.environ.get("STRING_SESSION")
 TOKEN = os.environ.get("TOKEN")
 OWNER_ID = os.environ.get("OWNER_ID")
-API_KEY = os.environ.get("API-KEY")
+API_KEY = os.environ.get("API_KEY")
 API_HASH = os.environ.get("API_HASH")
 
 ubot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
