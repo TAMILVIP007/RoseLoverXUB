@@ -21,8 +21,7 @@ def Wbot(**args):
         return wrapper
    return decorator   
   
-  
-  def load_module(shortname):
+def load_module(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
