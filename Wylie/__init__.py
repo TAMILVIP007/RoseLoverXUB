@@ -1,6 +1,6 @@
 from telethon import TelegramClient
 from telethon.sessions import StringSession
-from datetime import datetime
+import time
 import os, logging
 from logging import basicConfig, getLogger, INFO
 """RoseLoverX"""
@@ -9,7 +9,7 @@ logging.basicConfig(
 )
 LOGGER = logging.getLogger(__name__)
 
-StartTime = datetime.now()
+StartTime = time.time()
 
 STRING_SESSION = os.environ.get("STRING_SESSION")
 TOKEN = os.environ.get("TOKEN")
