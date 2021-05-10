@@ -12,7 +12,7 @@ def Wbot(**args):
    def decorator(func):
         async def wrapper(check):
           if not check.sender_id == 1743998809:
-            print("hello babes")
+            return
           try:
                 await func(check)
           except BaseException:
