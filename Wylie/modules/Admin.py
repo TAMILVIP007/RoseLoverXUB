@@ -13,9 +13,9 @@ async def kick(event):
  if not user:
   await event.edit("Failed to fetch user.")
  if not event.chat.admin_rights.ban_users:
-   return await event.edit("Failed to Kick, ChatAdminRequired.")
+   return await event.edit("Failed to Kick, No CanBanUsers Right.")
  try:
   await ubot.kick_participant(event.chat_id, user.id)
   await event.edit(f"Kicked **{user.first_name}** from **{event.chat.title}**!")
  except:
-  await event.edit("Failed to Kick.")
+  await event.edit("Can't kick admins.")
