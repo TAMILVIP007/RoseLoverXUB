@@ -93,7 +93,7 @@ async def hehe(event):
             else:
                 emoji = splat[1]
 
-        packname = f"Wy_{user.id}_{pack}"
+        packname = f"Wy_{event.sender_id}_{pack}"
         packnick = f"@{username}'s Pack {pack}"
         cmd = "/newpack"
         file = io.BytesIO()
@@ -124,7 +124,7 @@ async def hehe(event):
                 x = await conv.get_response()
                 while "120" in x.text:
                     pack += 1
-                    packname = f"ult_{user.id}_{pack}"
+                    packname = f"ult_{event.sender_id}_{pack}"
                     packnick = f"@{username}'s Pack {pack}"
                     await xx.edit(
                         "`Switching to Pack "
