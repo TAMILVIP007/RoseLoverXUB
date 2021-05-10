@@ -61,14 +61,14 @@ async def _t(event):
     type = "Sticker"
   elif msg.audio:
     type = "Audio"
-  elif msg.video:
-    type = "Video"
   elif msg.gif:
     type = "Gif"
+  elif msg.video:
+    type = "Video"
   elif msg.media:
     type = "Media"
   if msg.media:
     file_id = msg.file.id
     text += f"\n\n**Media Type:** `{type}`\n"
-    text += f"**File ID:** `{file_id}`"
+    text += f"**Fid:** `{file_id}`"
  await event.edit(text)
