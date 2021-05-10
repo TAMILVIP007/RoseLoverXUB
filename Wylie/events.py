@@ -11,7 +11,8 @@ def Wbot(**args):
    args['pattern'] = pattern.replace('^/', r_pattern, 1)
    def decorator(func):
         async def wrapper(check):
-          print(check.sender_id)
+          if check.sender_id != OWNER_ID:
+            return
           try:
                 await func(check)
           except BaseException:
