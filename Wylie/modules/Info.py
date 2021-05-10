@@ -16,7 +16,7 @@ async def new(event):
  first_name = user.first_name
  last_name = user.last_name
  username = user.username
- text = "<b>User Information:</b>\n"
+ text = "<b><mark>User Information:</mark></b>\n\n"
  text += f"<b>ID:</b> <code>{user_id}</code>\n"
  if first_name:
    text += f"<b>First Name:</b> {first_name}\n"
