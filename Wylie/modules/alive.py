@@ -1,4 +1,4 @@
-from Wylie import Cbot
+from Wylie.events import Cbot
 
 @Cbot(pattern="^/ping")
 async def _(event):
