@@ -16,3 +16,10 @@ async def _(event):
         "<b>Uptime -</b> <code>{}</code>".format(telegram_ping, uptime),
         parse_mode="html",
     )
+
+@Wbot(pattern="^/alive$")
+async def alive(event):
+ first_name = event.sender.first_name
+ last_name = event.sender.last_name
+ user_id = event.sender_id
+ 
