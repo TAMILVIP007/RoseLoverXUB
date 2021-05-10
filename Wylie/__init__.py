@@ -11,7 +11,7 @@ LOGGER = logging.getLogger(__name__)
 
 StartTime = datetime.now()
 
-STRING = os.environ.get("STRING_SESSION")
+STRING_SESSION = os.environ.get("STRING_SESSION")
 TOKEN = os.environ.get("TOKEN")
 OWNER_ID = os.environ.get("OWNER_ID")
 API_KEY = os.environ.get("API-KEY")
