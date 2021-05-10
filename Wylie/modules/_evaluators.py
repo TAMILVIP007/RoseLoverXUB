@@ -2,7 +2,7 @@ from Wylie.events import Wbot
 from Wylie import ubot
 import subprocess, asyncio, traceback, io, sys, os, time
 
-@Wbot(pattern="^/exec ?(.*)"))
+@Wbot(pattern="^/exec ?(.*)")
 async def ebent(event):
     if event.fwd_from:
         return
@@ -24,7 +24,7 @@ async def ebent(event):
     await catevent.edit(cresult)\
     
     
-@Wbot(pattern="!eval ?(.*)"))
+@Wbot(pattern="!eval ?(.*)")
 async def ubot(event):
     if event.fwd_from:
         return
