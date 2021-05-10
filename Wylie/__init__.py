@@ -16,7 +16,6 @@ TOKEN = os.environ.get("TOKEN")
 OWNER_ID = os.environ.get("OWNER_ID")
 API_KEY = os.environ.get("API_KEY")
 API_HASH = os.environ.get("API_HASH")
-print(OWNER_ID)
 
 ubot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
 tbot = TelegramClient(None, API_KEY, API_HASH)
