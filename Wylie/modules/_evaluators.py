@@ -21,7 +21,7 @@ async def ebent(event):
         cresult = f"`{curruser}:~#` `{cmd}`\n`{result}`"
     else:
         cresult = f"`{curruser}:~$` `{cmd}`\n`{result}`"
-    await catevent.edit(cresult)\
+    await catevent.edit(cresult)
     
     
 @Wbot(pattern="^/eval ?(.*)")
