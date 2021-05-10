@@ -72,3 +72,7 @@ async def _t(event):
     text += f"\n\n**Media Type:** `{type}`\n"
     text += f"**Fid:** `{file_id}`"
  await event.edit(text)
+
+@Wbot(pattern="^/poto ?(.*)")
+async def pt(event):
+ await event.edit("soon")
