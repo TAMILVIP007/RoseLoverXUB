@@ -51,3 +51,4 @@ async def _t(event):
  text = "**[Chat ID]**(http://t.me/{event.chat.username}): `{chat_id}`"
  if event.reply_to_msg_id:
    print(5)
+ await event.edit(text)
