@@ -1,5 +1,5 @@
 from Wylie.events import Wbot
-from Wylie import ubot
+from Wylie import ubot, tbot
 import subprocess, asyncio, traceback, io, sys, os, time
 
 @Wbot(pattern="^/exec ?(.*)")
