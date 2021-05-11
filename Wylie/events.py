@@ -11,7 +11,7 @@ def Wbot(**args):
    args['pattern'] = pattern.replace('^/', r_pattern, 1)
    def decorator(func):
         async def wrapper(check):
-          if not check.sender_id == 1743998809:
+          if not check.sender_id == int(OWNER_ID):
             return
           try:
                 await func(check)
