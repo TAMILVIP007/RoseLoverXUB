@@ -37,7 +37,7 @@ async def updateme_requirements():
       
 @Wbot(pattern="^/update ?(.*)")
 async def _(ups):
-    lol = await ups.edit("`Checking for updates, please wait....`")
+    lol = await ups.edit("Checking for updates..")
     conf = ups.pattern_match.group(1)
     off_repo = UPSTREAM_REPO_URL
     force_update = False
@@ -85,7 +85,7 @@ async def _(ups):
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
 
     if not changelog and not force_update:
-        await lol.edit("\n`Your bot is`  **up-to-date**  \n")
+        await lol.edit("\n`Your bot is` **up-to-date**")
         repo.__del__()
         return
 
@@ -110,15 +110,15 @@ async def _(ups):
         return
 
     if force_update:
-        await lol.edit("`Force-Syncing to latest master bot code, please wait...`")
+        await lol.edit("Force-Syncing to latest master bot code..")
     else:
-        await lol.edit("`Still Running ....`")
+        await lol.edit("Still Running...")
     try:
             ups_rem.pull(ac_br)
     except GitCommandError:
             repo.git.reset("--hard", "FETCH_HEAD")
     reqs_upgrade = await updateme_requirements()
-    await lol.edit("`Successfully Updated!\n" "restarting......`")
+    await lol.edit("Successfully Updated!\n" "restarting.")
     args = [sys.executable, "-m", "Wylie"]
     execle(sys.executable, *args, environ)
     return
