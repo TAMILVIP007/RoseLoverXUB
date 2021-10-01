@@ -1,1 +1,1 @@
-worker: python3 -m Wylie
+web: python3 -m Wylie
