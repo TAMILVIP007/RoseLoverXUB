@@ -1,6 +1,6 @@
 from Wylie.events import Wbot
 
-UPSTREAM_REPO_URL = "https://github.com/AmarnathCjd/RoseLoverXUB"
+UPSTREAM_REPO_URL = "https://tamilvip007/AmarnathCjd/RoseLoverXUB"
 from os import remove, execle, path, environ
 import asyncio
 import sys
