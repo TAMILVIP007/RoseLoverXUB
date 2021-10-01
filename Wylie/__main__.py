@@ -1,8 +1,9 @@
-from Wylie import ubot, tbot, TOKEN
+from Wylie import ubot, tbot, stacy, TOKEN
 import Wylie.events
 import sys
 
 try:
+  stacy.start()
   ubot.start()
   tbot.start(bot_token=TOKEN)
 except:
@@ -10,4 +11,5 @@ except:
   sys.exit()
   
 ubot.run_until_disconnected()
+stacy.run_until_disconnected()
 tbot.run_until_disconnected()
