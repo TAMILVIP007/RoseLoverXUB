@@ -11,12 +11,12 @@ def Wbot(**args):
    args['pattern'] = pattern.replace('^/', r_pattern, 1)
    def decorator(func):
         async def wrapper(check):
-          if not check.sender_id == int(OWNER_ID):
-            return
-          try:
-                await func(check)
-          except BaseException:
-                return
+           if check.sender_id != int(OWNER_ID):
+              return
+           try:
+                 await func(check)
+           except BaseException:
+                 return
         ubot.add_event_handler(wrapper, events.NewMessage(**args))
         return wrapper
    return decorator   

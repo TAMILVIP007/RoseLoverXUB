@@ -9,10 +9,7 @@ def get_readable_time(seconds: int) -> str:
 
     while count < 4:
         count += 1
-        if count < 3:
-            remainder, result = divmod(seconds, 60)
-        else:
-            remainder, result = divmod(seconds, 24)
+        remainder, result = divmod(seconds, 60) if count < 3 else divmod(seconds, 24)
         if seconds == 0 and remainder == 0:
             break
         time_list.append(int(result))
@@ -36,10 +33,8 @@ async def get_user(event):
         user_obj = await ubot.get_entity(previous_message.sender_id)
         extra = event.pattern_match.group(1)
     elif args:
-        extra = None
         user = args[0]
-        if len(args) == 2:
-            extra = args[1]
+        extra = args[1] if len(args) == 2 else None
         if user.isnumeric():
             user = int(user)
         if not user:

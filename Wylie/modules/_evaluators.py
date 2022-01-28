@@ -87,16 +87,29 @@ async def aexec(code, smessatatus):
 
 @Wbot(pattern="^/go ?(.*)")
 async def go(event):
- args = event.pattern_match.group(1)
- await event.edit("Excecuting...")
- data = {
-        "code": args,
-        "lang": 'go',
-        "token": "5b5f0ad8-705a-4118-87d4-c0ca29939aed",
-    }
- 
- r = requests.post("https://starkapis.herokuapp.com/compiler", data=data).json()
- if r.get("reason") != None:
+    args = event.pattern_match.group(1)
+    await event.edit("Excecuting...")
+    data = {
+           "code": args,
+           "lang": 'go',
+           "token": "5b5f0ad8-705a-4118-87d4-c0ca29939aed",
+       }
+
+    r = requests.post("https://starkapis.herokuapp.com/compiler", data=data).json()
+    if r.get("reason") is None:
+        result = f"""**Code:** \n`{reply_code}` 
+**Result:** 
+`{r.get("results")}`
+**Error:** 
+`{r.get("errors")}`
+**Stats:**
+ `{r.get("stats")}`
+**Success:** 
+ `{r.get("success")}`
+**Warnings:** 
+ `{r.get("warnings")}`
+ """
+    else:
         result = f"""**Code:** \n`{reply_code}` 
 **Result:** 
 `{r.get("results")}`
@@ -111,18 +124,5 @@ async def go(event):
 **Reason:**
  `{r.get("reason")}`
  """
- else:
-        result = f"""**Code:** \n`{reply_code}` 
-**Result:** 
-`{r.get("results")}`
-**Error:** 
-`{r.get("errors")}`
-**Stats:**
- `{r.get("stats")}`
-**Success:** 
- `{r.get("success")}`
-**Warnings:** 
- `{r.get("warnings")}`
- """
- await event.edit(result)
+    await event.edit(result)
  
